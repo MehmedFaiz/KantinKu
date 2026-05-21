@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btnLogin.disabled = true;
 
             setTimeout(() => {
-                window.location.href = "KantinKu/DashboardAdminDesktop/index.html";
+                window.location.href = "../LoginDesktop/DashboardAdminDesktop/index.html";
             }, 1500);
         }
     });
