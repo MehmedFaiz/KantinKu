@@ -1,0 +1,229 @@
+:root {
+    --primary-green: #3B8256;
+    --text-dark: #333333;
+    --text-muted: #888888;
+    --border-color: #CCCCCC;
+    --bg-light: #F9F9F9;
+    --error-red: #D32F2F;
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header & Navigation (Flexbox) */
+header {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    background-color: var(--primary-green);
+    color: white;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 480px; /* Mobile width constraint for prototype */
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 180px;
+}
+
+/* Form Section */
+.form-section {
+    padding: 1.5rem;
+    background-color: #FFFFFF;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin-top: -10px; /* Overlap with hero */
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.input-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper .icon {
+    position: absolute;
+    left: 12px;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+    padding: 10px 12px 10px 40px; /* Left padding makes room for icon */
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: #FFFFFF;
+    appearance: none; /* Removes default select arrow in some browsers to custom style */
+}
+
+.input-wrapper input.no-icon {
+    padding-left: 12px; /* Reset padding for inputs without icons */
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+    border-color: var(--primary-green);
+}
+
+/* Valid/Invalid States */
+.input-wrapper input.is-invalid,
+.input-wrapper select.is-invalid {
+    border-color: var(--error-red);
+}
+
+.error-message {
+    color: var(--error-red);
+    font-size: 0.75rem;
+    margin-top: 4px;
+    min-height: 12px;
+}
+
+/* Typography & Helpers */
+.text-green { color: var(--primary-green); text-decoration: none; }
+.fw-bold { font-weight: bold; }
+
+.terms-group {
+    font-size: 0.8rem;
+    text-align: left;
+    margin: 1rem 0;
+    color: var(--text-dark);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #2F6945;
+}
+
+.login-link {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Media Query untuk Desktop/Tablet */
+@media (min-width: 768px) {
+    body {
+        align-items: center;
+        background-color: #EFEFEF;
+    }
+    header, main, footer {
+        max-width: 600px;
+        width: 100%;
+    }
+    main {
+        margin-top: 2rem;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    header {
+        border-radius: 12px;
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KantinKu - Operasional Penjualan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <header>
+        <div class="header-left">
+            <i class="fa-solid fa-bars"></i>
+            <div class="brand">
+                <span class="brand-icon">A</span>
+                <span>KantinKu</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="notification">
+                <i class="fa-solid fa-bell"></i>
+                <span class="notif-badge">3</span>
+            </div>
+            <div class="avatar">AD</div>
+        </div>
+    </header>
+
+    <main>
+        <section id="status-toko">
+            <div class="store-header">
+                <div class="store-info">
+                    <div class="store-icon"><i class="fa-solid fa-store"></i></div>
+                    <div class="store-name-group">
+                        <h2>Kantin Utama <span id="main-status-badge" class="badge badge-green">Buka</span></h2>
+                        <div class="store-status-desc">
+                            <span id="main-status-dot" class="dot"></span> 
+                            <span id="main-status-text">Sedang menerima pesanan online</span>
+                        </div>
+                        <div class="store-status-desc" style="margin-top: 2px;">Buka sejak 07:00 WIB</div>
+                    </div>
+                </div>
+                <div class="store-toggle-group">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="main-store-toggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span id="main-toggle-label" class="toggle-label">Buka</span>
+                </div>
+            </div>
+            
+            <div class="quick-close-title">Tutup sementara cepat</div>
+            <div class="quick-close-buttons">
+                <button class="btn-outline time-btn">15 menit</button>
+                <button class="btn-outline time-btn">30 menit</button>
+                <button class="btn-outline time-btn">60 menit</button>
+                <button class="btn-outline time-btn"><i class="fa-regular fa-calendar"></i> Custom</button>
+            </div>
+        </section>
+
+        <section class="order-summary-grid" style="background: transparent; border: none; padding: 0;">
+            <div class="summary-card">
+                <div class="summary-title"><i class="fa-solid fa-cart-shopping" style="color: var(--primary);"></i> Pesanan Aktif</div>
+                <div class="summary-count">12</div>
+                <a href="#" class="summary-link">Lihat semua</a>
+            </div>
+            <div class="summary-card">
+                <div class="summary-title"><i class="fa-regular fa-circle-check" style="color: #0d6efd;"></i> Selesai</div>
+                <div class="summary-count">128</div>
+                <div class="summary-desc">Hari ini</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-title"><i class="fa-regular fa-circle-xmark" style="color: #dc3545;"></i> Dibatalkan</div>
+                <div class="summary-count">8</div>
+                <div class="summary-desc">Hari ini</div>
+            </div>
+        </section>
+
+        <section id="pesanan-realtime">
+            <div class="section-header">
+                <h2 class="section-title">Pesanan Masuk Real-time</h2>
+                <a href="#" class="link-see-all">Lihat semua <i class="fa-solid fa-angle-right"></i></a>
+            </div>
+            <div class="order-list">
+                <div class="order-item">
+                    <div class="order-id-group"><span class="dot" style="margin-top: 6px;"></span>
+                        <div>
+                            <div class="order-id">#A026</div>
+                            <div class="order-items">2 item</div>
+                        </div>
+                    </div>
+                    <div class="order-price">Rp36.000</div>
+                    <span class="badge badge-green">Baru</span>
+                </div>
+                <div class="order-item">
+                    <div class="order-id-group"><span class="dot" style="margin-top: 6px;"></span>
+                        <div>
+                            <div class="order-id">#A027</div>
+                            <div class="order-items">3 item</div>
+                        </div>
+                    </div>
+                    <div class="order-price">Rp45.000</div>
+                    <span class="badge badge-green">Baru</span>
+                </div>
+                <div class="order-item">
+                    <div class="order-id-group"><span class="dot" style="margin-top: 6px;"></span>
+                        <div>
+                            <div class="order-id">#A028</div>
+                            <div class="order-items">1 item</div>
+                        </div>
+                    </div>
+                    <div class="order-price">Rp18.000</div>
+                    <span class="badge badge-green">Baru</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu-ketersediaan">
+            <div class="section-header" style="margin-bottom: 8px;">
+                <h2 class="section-title">Menu & Ketersediaan</h2>
+            </div>
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Cari menu...">
+            </div>
+            
+            <div class="menu-list">
+                <div class="menu-item">
+                    <div class="menu-info">
+                        <img src="https://images.unsplash.com/photo-1626132647523-66f5bf380027?w=120&auto=format&fit=crop&q=60" alt="Nasi Ayam Geprek" class="menu-img">
+                        <div class="menu-details">
+                            <h3>Nasi Ayam Geprek</h3>
+                            <span class="badge badge-green">Makanan</span>
+                        </div>
+                    </div>
+                    <div class="menu-price">Rp18.000</div>
+                    <div class="menu-controls">
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="menu-toggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span class="badge badge-green status-badge" style="width: 65px; text-align: center;">Tersedia</span>
+                        <i class="fa-solid fa-angle-right" style="color: var(--text-muted);"></i>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-info">
+                        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=120&auto=format&fit=crop&q=60" alt="Es Teh Manis" class="menu-img">
+                        <div class="menu-details">
+                            <h3>Es Teh Manis</h3>
+                            <span class="badge badge-blue">Minuman</span>
+                        </div>
+                    </div>
+                    <div class="menu-price">Rp6.000</div>
+                    <div class="menu-controls">
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="menu-toggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span class="badge badge-green status-badge" style="width: 65px; text-align: center;">Tersedia</span>
+                        <i class="fa-solid fa-angle-right" style="color: var(--text-muted);"></i>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-info">
+                        <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=120&auto=format&fit=crop&q=60" alt="Kwetiau" class="menu-img">
+                        <div class="menu-details">
+                            <h3>Kwetiau</h3>
+                            <span class="badge badge-green">Makanan</span>
+                        </div>
+                    </div>
+                    <div class="menu-price">Rp20.000</div>
+                    <div class="menu-controls">
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="menu-toggle">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="badge badge-gray status-badge" style="width: 65px; text-align: center;">Habis</span>
+                        <i class="fa-solid fa-angle-right" style="color: var(--text-muted);"></i>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-info">
+                        <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=120&auto=format&fit=crop&q=60" alt="Jus Semangka" class="menu-img">
+                        <div class="menu-details">
+                            <h3>Jus Semangka</h3>
+                            <span class="badge badge-blue">Minuman</span>
+                        </div>
+                    </div>
+                    <div class="menu-price">Rp10.000</div>
+                    <div class="menu-controls">
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="menu-toggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span class="badge badge-green status-badge" style="width: 65px; text-align: center;">Tersedia</span>
+                        <i class="fa-solid fa-angle-right" style="color: var(--text-muted);"></i>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-info">
+                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=120&auto=format&fit=crop&q=60" alt="Dimsum" class="menu-img">
+                        <div class="menu-details">
+                            <h3>Dimsum</h3>
+                            <span class="badge badge-orange">Snack</span>
+                        </div>
+                    </div>
+                    <div class="menu-price">Rp16.000</div>
+                    <div class="menu-controls">
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="menu-toggle">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="badge badge-orange status-badge" style="background:#fff3cd; color:#fd7e14; width: 65px; text-align: center;">Kosong</span>
+                        <i class="fa-solid fa-angle-right" style="color: var(--text-muted);"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="peringatan-stok" style="margin-bottom: 16px;">
+            <div class="section-header">
+                <h2 class="section-title">Peringatan Stok</h2>
+                <a href="#" class="link-see-all">Lihat semua <i class="fa-solid fa-angle-right"></i></a>
+            </div>
+            <div class="stock-list">
+                <div class="stock-item">
+                    <div class="stock-info">
+                        <div class="stock-icon">TL</div>
+                        <div class="stock-details"><h3>Telur</h3><p>Stok: 5</p></div>
+                    </div>
+                    <span class="badge badge-orange">Rendah</span>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-info">
+                        <div class="stock-icon">AF</div>
+                        <div class="stock-details"><h3>Ayam Fillet</h3><p>Stok: 3</p></div>
+                    </div>
+                    <span class="badge badge-orange">Rendah</span>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-info">
+                        <div class="stock-icon" style="background: #fcedec; color: #dc3545; border-color: #f5c2c7;">MK</div>
+                        <div class="stock-details"><h3>Mie Kuning</h3><p>Stok: 0</p></div>
+                    </div>
+                    <span class="badge badge-red">Habis</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="#" class="nav-item active">
+            <i class="fa-solid fa-store"></i>
+            <span>Operasional</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fa-solid fa-circle-user"></i>
+            <span>Akun</span>
+        </a>
+    </nav>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

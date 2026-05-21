@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KantinKu - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="app-header">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">A</div>
+                <h1 class="logo-text">KantinKu</h1>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Menu Utama">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="main-nav">
+                <a href="#" class="nav-link">Beranda</a>
+                <a href="#" class="nav-link">Fitur</a>
+                <a href="#" class="nav-link">Tentang</a>
+                <a href="#" class="nav-link">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            
+            <section class="login-split">
+                
+                <div class="image-showcase">
+                    <img src="kantin.png" alt="Suasana KantinKu" class="hero-image" onerror="this.src='https://via.placeholder.com/800x600/e5e7eb/6b7280?text=Simpan+kantin.jpg+di+folder+ini'">
+                </div>
+
+                <div class="form-wrapper">
+                    <div class="login-card">
+                        <div class="card-header">
+                            <h2>Log in</h2>
+                            <p>Masuk ke akun Anda</p>
+                        </div>
+
+                        <form id="loginForm" novalidate>
+                            <div class="input-group">
+                                <label for="email">Email</label>
+                                <div class="input-container">
+                                    <i class="fa-regular fa-envelope input-icon"></i>
+                                    <input type="email" id="email" placeholder="atiqazulva@gmail.com" required>
+                                </div>
+                                <span class="error-msg" id="error-email"></span>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="password">Password</label>
+                                <div class="input-container">
+                                    <i class="fa-solid fa-lock input-icon"></i>
+                                    <input type="password" id="password" placeholder="Masukkan password" required>
+                                    <button type="button" class="btn-toggle-pass" id="togglePass" aria-label="Lihat password">
+                                        <i class="fa-regular fa-eye" id="eyeIcon"></i>
+                                    </button>
+                                </div>
+                                <span class="error-msg" id="error-password"></span>
+                            </div>
+
+                            <div class="form-actions">
+                                <a href="#" class="forgot-link">Lupa password?</a>
+                            </div>
+
+                            <button type="submit" class="btn-primary" id="btnLogin">Masuk</button>
+
+                            <div class="register-prompt">
+                                <p>Belum punya akun? <a href="#" class="register-link">Daftar di sini</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="promo-banner">
+                <div class="promo-text-primary">
+                    <h3>Kelola penjualan kantin dengan lebih mudah dan efisien</h3>
+                </div>
+                <div class="promo-text-secondary">
+                    <p>Catat transaksi, kelola stok, & lihat laporan dalam satu aplikasi terintegrasi</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2026 KantinKu. Semua hak dilindungi.</p>
+            <div class="footer-links">
+                <a href="#">Kebijakan Privasi</a>
+                <span class="divider">|</span>
+                <a href="#">Syarat & Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

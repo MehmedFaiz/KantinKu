@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papan Status Pesanan - Desktop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="desktop-container">
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">A</span>
+                <span class="logo-text">KantinKU</span>
+            </div>
+            <h1 class="page-title">Papan Status Pesanan Publik</h1>
+            <div class="badge-container">
+                <span class="badge-aktif">Aktif</span>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="info-card">
+                <h2>Pantau status pesanan secara real-time</h2>
+                <p id="time-location">Update terakhir: --:-- WIB • Lokasi: Counter Utama</p>
+            </section>
+
+            <section class="summary-container">
+                <div class="summary-box bg-green">
+                    <span class="summary-label">Siap Diambil</span>
+                    <span class="summary-count" id="count-siap">0</span>
+                </div>
+                <div class="summary-box bg-blue">
+                    <span class="summary-label">Diproses</span>
+                    <span class="summary-count" id="count-proses">0</span>
+                </div>
+                <div class="summary-box bg-yellow">
+                    <span class="summary-label">Menunggu</span>
+                    <span class="summary-count" id="count-tunggu">0</span>
+                </div>
+            </section>
+
+            <div class="status-grid">
+                <section class="status-card card-full-height">
+                    <h3 class="section-title">Siap Diambil</h3>
+                    <div class="pill-grid" id="grid-siap">
+                        </div>
+                </section>
+
+                <div class="right-column">
+                    <section class="status-card">
+                        <h3 class="section-title">Sedang Diproses</h3>
+                        <div class="pill-grid" id="grid-proses">
+                            </div>
+                    </section>
+
+                    <section class="status-card">
+                        <h3 class="section-title">Menunggu</h3>
+                        <div class="pill-grid" id="grid-tunggu">
+                            </div>
+                    </section>
+                </div>
+            </div>
+
+            <footer class="instruction-footer">
+                <h4>Petunjuk</h4>
+                <p>Pembeli tidak berinteraksi langsung dengan sistem kasir. Papan ini dirancang untuk dibaca cepat dari jarak sedang.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

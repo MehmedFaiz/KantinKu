@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papan Status Pesanan - Layar Lanskap</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="tv-container">
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">A</span>
+                <span class="logo-text">KantinKU</span>
+            </div>
+            <h1 class="page-title">Papan Status Pesanan Publik</h1>
+            <div class="badge-container">
+                <span class="badge-realtime">Realtime</span>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="info-bar">
+                <h2>Status Pesanan Hari Ini</h2>
+                <p id="time-location">Update terakhir: --:-- WIB • Counter Utama • Layar Publik Pembeli</p>
+            </section>
+
+            <section class="summary-cards">
+                <div class="summary-box bg-siap">
+                    <div class="summary-text">
+                        <h3>Siap Diambil</h3>
+                        <p>Nomor yang sudah bisa diambil</p>
+                    </div>
+                    <div class="summary-count text-siap" id="count-siap">0</div>
+                </div>
+                <div class="summary-box bg-proses">
+                    <div class="summary-text">
+                        <h3>Sedang Diproses</h3>
+                        <p>Pesanan sedang disiapkan</p>
+                    </div>
+                    <div class="summary-count text-proses" id="count-proses">0</div>
+                </div>
+                <div class="summary-box bg-tunggu">
+                    <div class="summary-text">
+                        <h3>Menunggu</h3>
+                        <p>Pesanan tercatat dan menunggu proses</p>
+                    </div>
+                    <div class="summary-count text-tunggu" id="count-tunggu">0</div>
+                </div>
+            </section>
+
+            <section class="board-grid">
+                <div class="board-column-left">
+                    <div class="status-card card-full">
+                        <h3 class="section-title text-black">Siap Diambil</h3>
+                        <div class="pill-grid-2" id="grid-siap">
+                            </div>
+                    </div>
+                </div>
+
+                <div class="board-column-right">
+                    <div class="status-card">
+                        <h3 class="section-title text-black">Sedang Diproses</h3>
+                        <div class="pill-grid-3" id="grid-proses">
+                            </div>
+                    </div>
+
+                    <div class="status-card">
+                        <h3 class="section-title text-black">Menunggu</h3>
+                        <div class="pill-grid-3" id="grid-tunggu">
+                            </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bottom-footer">
+            <p>Silakan menuju kasir jika nomor pesanan Anda muncul pada bagian "Siap Diambil".</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

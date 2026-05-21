@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Kasir</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="mobile-app">
+        <header class="app-header">
+            <button class="icon-btn"><i class="fa-solid fa-bars"></i></button>
+            <h1 class="header-title">Dashboard Kasir</h1>
+            <button class="icon-btn notification">
+                <i class="fa-regular fa-bell"></i>
+                <span class="dot"></span>
+            </button>
+        </header>
+
+        <main class="main-content">
+            <section class="hero-banner">
+                <div class="hero-text">
+                    <h2>Ringkasan Hari Ini</h2>
+                    <p>Pantau transaksi, antrian, dan stok menu secara cepat.</p>
+                    <div class="tags">
+                        <span class="tag">Cepat</span>
+                        <span class="tag">Akurat</span>
+                        <span class="tag">Real-time</span>
+                    </div>
+                </div>
+                <div class="hero-badge">Kasir</div>
+            </section>
+
+            <button class="btn-primary" id="btn-transaksi">
+                + Transaksi Baru
+            </button>
+
+            <h3 class="section-title">Ringkasan Hari Ini</h3>
+            <section class="summary-grid">
+                <div class="summary-card card-green">
+                    <i class="fa-solid fa-receipt card-icon"></i>
+                    <p class="card-label">Omzet Hari Ini</p>
+                    <h4 class="card-value">Rp3.450.000</h4>
+                    <p class="card-trend"><i class="fa-solid fa-caret-up"></i> 18% dari kemarin</p>
+                </div>
+                <div class="summary-card card-orange">
+                    <i class="fa-solid fa-money-bill-wave card-icon"></i>
+                    <p class="card-label">Transaksi</p>
+                    <h4 class="card-value">128</h4>
+                    <p class="card-trend"><i class="fa-solid fa-caret-up"></i> 12% dari kemarin</p>
+                </div>
+                <div class="summary-card card-blue">
+                    <i class="fa-solid fa-bell-concierge card-icon"></i>
+                    <p class="card-label">Pesanan Aktif</p>
+                    <h4 class="card-value">8</h4>
+                    <p class="card-sub">Pesanan</p>
+                </div>
+                <div class="summary-card card-red">
+                    <i class="fa-solid fa-triangle-exclamation card-icon"></i>
+                    <p class="card-label">Menu Hampir Habis</p>
+                    <h4 class="card-value">5</h4>
+                    <p class="card-sub">Item</p>
+                </div>
+            </section>
+
+            <div class="section-header">
+                <h3 class="section-title">Pesanan Aktif</h3>
+                <a href="#" class="link-all">Lihat Semua</a>
+            </div>
+            
+            <section class="order-list" id="order-container">
+                </section>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Transaksi</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-users"></i>
+                <span>Antrian</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-store"></i>
+                <span>Operasional</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-circle-user"></i>
+                <span>Akun</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

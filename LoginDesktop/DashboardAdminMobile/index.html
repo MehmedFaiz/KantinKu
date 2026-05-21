@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KantinKu - Dashboard Admin Mobile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="mobile-wrapper">
+        <div class="container">
+            <header>
+                <div class="header-left">
+                    <button class="menu-btn" aria-label="Menu"><span class="material-symbols-rounded">menu</span></button>
+                    <div class="logo-group">
+                        <div class="logo-icon">A</div>
+                        <div class="brand-name">KantinKu</div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="notification">
+                        <span class="material-symbols-rounded">notifications</span>
+                        <div class="notif-badge"></div>
+                    </div>
+                    <div class="profile-avatar">AD</div>
+                </div>
+            </header>
+
+            <main>
+                <section class="greeting">
+                    <div class="greeting-text">
+                        <h2>Selamat pagi, <span>Admin</span></h2>
+                        <h1>Pantau operasional<br>kantin Anda hari ini 👋</h1>
+                    </div>
+                    <button class="filter-btn" id="dateFilterBtn">Hari ini</button>
+                </section>
+
+                <section class="stats-grid">
+                    <article class="stat-card green">
+                        <div class="stat-icon"><span class="material-symbols-rounded">attach_money</span></div>
+                        <div class="stat-info">
+                            <div class="title">Pendapatan Hari Ini</div>
+                            <div class="value">Rp3.450.000</div>
+                            <div class="subtext">↑ 12,5% dari kemarin</div>
+                        </div>
+                    </article>
+                    <article class="stat-card blue">
+                        <div class="stat-icon"><span class="material-symbols-rounded">room_service</span></div>
+                        <div class="stat-info">
+                            <div class="title">Pesanan Aktif</div>
+                            <div class="value">128</div>
+                            <div class="subtext">8 pesanan diproses</div>
+                        </div>
+                    </article>
+                    <article class="stat-card teal">
+                        <div class="stat-icon"><span class="material-symbols-rounded">group</span></div>
+                        <div class="stat-info">
+                            <div class="title">Total Pengguna</div>
+                            <div class="value">256</div>
+                            <div class="subtext">24 baru bulan ini</div>
+                        </div>
+                    </article>
+                    <article class="stat-card orange">
+                        <div class="stat-icon"><span class="material-symbols-rounded">schedule</span></div>
+                        <div class="stat-info">
+                            <div class="title">Menunggu Persetujuan</div>
+                            <div class="value">14</div>
+                            <div class="subtext">Menu & Akun</div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="chart-section">
+                    <div class="chart-header">
+                        <div>
+                            <h3 class="chart-title">Penjualan 7 Hari Terakhir</h3>
+                            <div class="chart-amount">
+                                Rp18.750.000 
+                                <span class="chart-trend">↑ 15,8% <span>vs 7 hari lalu</span></span>
+                            </div>
+                        </div>
+                        <button class="chart-filter">7 Hari</button>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <svg class="chart-svg" viewBox="0 0 400 100" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#27AE60" stop-opacity="0.2"/>
+                                    <stop offset="100%" stop-color="#27AE60" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+                            <line x1="0" y1="20" x2="400" y2="20" class="grid-line" />
+                            <line x1="0" y1="45" x2="400" y2="45" class="grid-line" />
+                            <line x1="0" y1="70" x2="400" y2="70" class="grid-line" />
+                            
+                            <polygon points="10,80 70,65 140,25 210,65 280,55 340,80 390,25 390,100 10,100" fill="url(#chartGradient)" />
+                            <path d="M 10 80 L 70 65 L 140 25 L 210 65 L 280 55 L 340 80 L 390 25" fill="none" stroke="#27AE60" stroke-width="3" />
+                            
+                            <circle cx="10" cy="80" class="point" />
+                            <circle cx="70" cy="65" class="point" />
+                            <circle cx="140" cy="25" class="point" />
+                            <circle cx="210" cy="65" class="point" />
+                            <circle cx="280" cy="55" class="point" />
+                            <circle cx="340" cy="80" class="point" />
+                            <circle cx="390" cy="25" class="point" />
+                        </svg>
+                    </div>
+                    
+                    <div class="chart-labels">
+                        <span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span><span>Min</span><span>Sen</span><span class="label-today">Hari ini</span>
+                    </div>
+                </section>
+
+                <section class="recent-activity">
+                    <div class="section-header">
+                        <h3>Aktivitas Terbaru</h3>
+                        <a href="#">Lihat semua</a>
+                    </div>
+                    <ul class="activity-list" id="activityList"></ul>
+                </section>
+            </main>
+        </div>
+
+        <nav class="bottom-nav" id="bottomNav">
+            <a href="#" class="nav-item active" data-nav="dashboard">
+                <span class="material-symbols-rounded">home</span>
+                Dashboard
+            </a>
+            <a href="#" class="nav-item" data-nav="transaksi">
+                <span class="material-symbols-rounded">receipt_long</span>
+                Transaksi
+            </a>
+            <a href="#" class="nav-item" data-nav="antrian">
+                <span class="material-symbols-rounded">people</span>
+                Antrian
+            </a>
+            <a href="#" class="nav-item" data-nav="operasional">
+                <span class="material-symbols-rounded">domain</span>
+                Operasional
+            </a>
+            <a href="#" class="nav-item" data-nav="akun">
+                <span class="material-symbols-rounded">manage_accounts</span>
+                Akun
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

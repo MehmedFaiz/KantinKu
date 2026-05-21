@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KantinKu - Log in</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="mobile-emulator">
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">A</span>
+                <h1 class="logo-text">KantinKu</h1>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="hero-section">
+                <img src="kantin.png" alt="Suasana Kantin" class="hero-image" onerror="this.src='https://via.placeholder.com/600x300/333/fff?text=Gambar+Kantin'">
+            </section>
+
+            <section class="login-section">
+                <div class="card">
+                    <h2 class="form-title">Log in</h2>
+                    
+                    <form id="loginForm" novalidate>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-envelope icon-left"></i>
+                                <input type="email" id="email" placeholder="atiqazulva@gmail.com" required>
+                            </div>
+                            <span class="error-msg" id="error-email"></span>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-lock icon-left"></i>
+                                <input type="password" id="password" placeholder="Masukkan password" required>
+                                <button type="button" class="btn-toggle-pass" id="togglePass" aria-label="Tampilkan password">
+                                    <i class="fa-regular fa-eye" id="eyeIcon"></i>
+                                </button>
+                            </div>
+                            <span class="error-msg" id="error-password"></span>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="role">Masuk Sebagai</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-user-tag icon-left"></i>
+                                <select id="role" required>
+                                    <option value="" disabled selected>Pilih akses akun</option>
+                                    <option value="pembeli">Pembeli</option>
+                                    <option value="penjual">Penjual / Kasir</option>
+                                    <option value="admin">Administrator</option>
+                                </select>
+                            </div>
+                            <span class="error-msg" id="error-role"></span>
+                        </div>
+
+                        <div class="form-actions">
+                            <a href="#" class="forgot-link">Lupa password?</a>
+                        </div>
+
+                        <button type="submit" class="btn-primary" id="btnLogin">Masuk</button>
+
+                        <div class="register-link">
+                            <p>Belum punya akun? <a href="#">Daftar di sini</a></p>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>&copy; 2026 KantinKu.<br>Semua hak dilindungi</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

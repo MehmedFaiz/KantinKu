@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akun - Web Version</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-shell" id="app">
+
+    <aside class="sidebar" role="navigation" aria-label="Sidebar Navigasi">
+      <div class="sidebar__header">
+        <div class="sidebar__logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        </div>
+        <span class="sidebar__brand">KantinApp</span>
+      </div>
+      
+      <nav class="sidebar__nav">
+        <a href="#" class="sidebar__item" data-nav="dashboard" aria-label="Dashboard">
+          <svg class="sidebar__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="sidebar__label">Dashboard</span>
+        </a>
+        <a href="#" class="sidebar__item" data-nav="operasional" aria-label="Operasional">
+          <svg class="sidebar__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+          <span class="sidebar__label">Operasional</span>
+        </a>
+        <a href="#" class="sidebar__item sidebar__item--active" data-nav="akun" aria-label="Akun" aria-current="page">
+          <svg class="sidebar__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/></svg>
+          <span class="sidebar__label">Akun</span>
+        </a>
+      </nav>
+    </aside>
+
+    <div class="content-wrapper">
+      
+      <header class="top-bar" role="banner">
+        <div class="top-bar__inner">
+          <h1 class="top-bar__title">Akun</h1>
+          <button class="top-bar__notif" id="btnNotif" aria-label="Notifikasi">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="notif-badge" id="notifBadge">3</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="main-content" id="mainContent" role="main">
+        <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+        <div class="content-grid">
+          <section class="profile-card" aria-label="Informasi Pengguna">
+            <div class="profile-card__avatar" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="profile-card__info">
+              <p class="profile-card__name" id="userName">Siti Aisyah</p>
+              <p class="profile-card__role" id="userRole">Kasir</p>
+            </div>
+          </section>
+
+          <section class="info-cards" aria-label="Status Kerja">
+            <div class="info-card info-card--shift" id="cardShift">
+              <div class="info-card__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="info-card__text">
+                <span class="info-card__label">Shift Aktif</span>
+                <span class="info-card__value" id="shiftTime">07.00 - 15.00</span>
+              </div>
+            </div>
+
+            <div class="info-card info-card--kasir" id="cardKasir">
+              <div class="info-card__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="info-card__text">
+                <span class="info-card__value info-card__value--kasir" id="kasirName">Kasir 1</span>
+                <span class="info-card__label" id="kasirCounter">Counter Utama</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="menu-list" aria-label="Menu Akun">
+            <nav aria-label="Navigasi Profil">
+              <ul class="menu-list__items" role="list">
+                <li class="menu-list__item" role="listitem">
+                  <button class="menu-list__btn" data-page="profil" aria-label="Profil Saya">
+                    <span class="menu-list__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </span>
+                    <span class="menu-list__label">Profil Saya</span>
+                    <span class="menu-list__chevron" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </span>
+                  </button>
+                </li>
+                
+                <li class="menu-list__item" role="listitem">
+                  <button class="menu-list__btn" data-page="shift" aria-label="Shift Hari Ini">
+                    <span class="menu-list__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </span>
+                    <span class="menu-list__label">Shift Hari Ini</span>
+                    <span class="menu-list__chevron" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </span>
+                  </button>
+                </li>
+
+                <li class="menu-list__item" role="listitem">
+                  <button class="menu-list__btn" data-page="printer" aria-label="Printer dan Perangkat">
+                    <span class="menu-list__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                    </span>
+                    <span class="menu-list__label">Printer &amp; Perangkat</span>
+                    <span class="menu-list__chevron" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </span>
+                  </button>
+                </li>
+
+                <li class="menu-list__item" role="listitem">
+                  <button class="menu-list__btn" data-page="bantuan" aria-label="Bantuan">
+                    <span class="menu-list__icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </span>
+                    <span class="menu-list__label">Bantuan</span>
+                    <span class="menu-list__chevron" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </span>
+                  </button>
+                </li>
+
+                <li class="menu-list__item menu-list__item--logout" role="listitem">
+                  <button class="menu-list__btn menu-list__btn--logout" id="btnLogout" aria-label="Keluar dari akun">
+                    <span class="menu-list__icon menu-list__icon--logout" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    </span>
+                    <span class="menu-list__label menu-list__label--logout">Logout</span>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </section>
+        </div>
+      </main>
+    </div></div><div class="modal-overlay" id="modalLogout" role="dialog" aria-modal="true" aria-labelledby="modalLogoutTitle" hidden>
+    <div class="modal">
+      <div class="modal__icon modal__icon--warning" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <h2 class="modal__title" id="modalLogoutTitle">Keluar dari Akun?</h2>
+      <p class="modal__desc">Sesi aktif kamu akan diakhiri. Pastikan semua transaksi sudah tersimpan.</p>
+      <div class="modal__actions">
+        <button class="btn btn--secondary" id="btnCancelLogout">Batal</button>
+        <button class="btn btn--danger" id="btnConfirmLogout">Ya, Keluar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+:root {
+    --brand-green: #34995A;
+    --text-dark: #1F2937;
+    --text-gray: #6B7280;
+    --border-light: #E5E7EB;
+    
+    /* Card Colors */
+    --bg-green-light: #EAF5EE;
+    --text-green: #2E8850;
+    
+    --bg-orange-light: #FFF6E5;
+    --text-orange: #D98A2C;
+    
+    --bg-blue-light: #E8F0FE;
+    --text-blue: #3C71CA;
+    
+    --bg-red-light: #FCE8E8;
+    --text-red: #D73A3A;
+    
+    /* Badge Colors */
+    --badge-tunggu-bg: #FAEDD2;
+    --badge-tunggu-text: #B87B1E;
+    
+    --badge-proses-bg: #DCE7FC;
+    --badge-proses-text: #2C5CBE;
+    
+    --badge-siap-bg: #D1F0DA;
+    --badge-siap-text: #288145;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #E5E7EB; /* Latar desktop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Simulasi Layar Mobile */
+.mobile-app {
+    width: 100%;
+    max-width: 414px;
+    height: 100vh;
+    max-height: 896px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-light);
+    background-color: #FFF;
+    z-index: 10;
+}
+
+.header-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--text-dark);
+    cursor: pointer;
+    position: relative;
+}
+
+.notification .dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background-color: var(--text-red);
+    border-radius: 50%;
+    border: 2px solid #FFF;
+}
+
+/* Konten Utama Scrollable */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    padding-bottom: 80px; /* Spacer untuk bottom nav */
+}
+
+/* Hero Banner */
+.hero-banner {
+    background-color: var(--bg-green-light);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.hero-text h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.hero-text p {
+    font-size: 12px;
+    color: var(--text-gray);
+    margin-bottom: 12px;
+    max-width: 200px;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+}
+
+.tag {
+    background-color: #FFFFFF;
+    color: var(--brand-green);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.hero-badge {
+    background-color: #FFFFFF;
+    color: var(--text-gray);
+    font-weight: 600;
+    font-size: 12px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+/* Tombol Transaksi Baru */
+.btn-primary {
+    width: 100%;
+    background-color: var(--brand-green);
+    color: #FFFFFF;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 24px;
+    transition: opacity 0.2s;
+}
+
+.btn-primary:active {
+    opacity: 0.8;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+/* CSS Grid 2x2 untuk Ringkasan */
+.summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.summary-card {
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.card-label {
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text-dark);
+}
+
+.card-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.card-trend, .card-sub {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+/* Varian Warna Card */
+.card-green { background-color: var(--bg-green-light); }
+.card-green .card-icon, .card-green .card-trend { color: var(--text-green); }
+
+.card-orange { background-color: var(--bg-orange-light); }
+.card-orange .card-icon, .card-orange .card-trend { color: var(--text-orange); }
+
+.card-blue { background-color: var(--bg-blue-light); }
+.card-blue .card-icon, .card-blue .card-sub { color: var(--text-blue); }
+
+.card-red { background-color: var(--bg-red-light); }
+.card-red .card-icon, .card-red .card-sub { color: var(--text-red); }
+
+/* Pesanan Aktif Section */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.link-all {
+    font-size: 12px;
+    color: var(--brand-green);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Style Item List Flexbox */
+.order-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    background-color: #FFFFFF;
+}
+
+.order-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.order-id {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.order-time {
+    font-size: 12px;
+    color: var(--text-gray);
+}
+
+.order-menu {
+    flex: 1;
+    font-size: 12px;
+    color: var(--text-dark);
+    margin-left: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.badge-status {
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status-menunggu { background-color: var(--badge-tunggu-bg); color: var(--badge-tunggu-text); }
+.status-diproses { background-color: var(--badge-proses-bg); color: var(--badge-proses-text); }
+.status-siap { background-color: var(--badge-siap-bg); color: var(--badge-siap-text); }
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0 20px 0; /* Padding bawah ekstra untuk layar berponi/iOS */
+    z-index: 10;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-gray);
+    gap: 4px;
+}
+
+.nav-item i {
+    font-size: 18px;
+}
+
+.nav-item span {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.nav-item.active {
+    color: var(--brand-green);
+}

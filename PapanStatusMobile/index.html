@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papan Status Pesanan Publik</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="mobile-container">
+        <header class="app-header">
+            <h1>Status Pesanan</h1>
+        </header>
+
+        <main class="content">
+            <div class="status-banner">
+                <div class="banner-text">
+                    <h2>Papan Status Publik</h2>
+                    <p id="lastUpdate">Update terakhir: --:-- WIB</p>
+                </div>
+                <div class="badge-aktif">Aktif</div>
+            </div>
+
+            <section class="status-section">
+                <h3 class="section-title">Siap Diambil</h3>
+                <div class="number-card" id="siap-container">
+                    </div>
+            </section>
+
+            <section class="status-section">
+                <h3 class="section-title">Sedang Diproses</h3>
+                <div class="number-card" id="proses-container">
+                    </div>
+            </section>
+
+            <section class="status-section">
+                <h3 class="section-title">Menunggu</h3>
+                <div class="number-card" id="tunggu-container">
+                    </div>
+            </section>
+
+            <footer class="info-footer">
+                <p>Silakan ambil pesanan ke kasir saat nomor Anda muncul di bagian "Siap Diambil".</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

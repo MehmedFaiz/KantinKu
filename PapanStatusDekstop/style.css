@@ -1,0 +1,241 @@
+:root {
+    --bg-main: #FFFFFF;
+    --bg-body: #F8FAFC;
+    --text-dark: #1E293B;
+    --text-muted: #64748B;
+    --border-color: #E2E8F0;
+    
+    /* Brand Colors */
+    --brand-green: #229853;
+    
+    /* Category Colors */
+    --siap-bg: #E6F5EB;
+    --siap-text: #229853;
+    
+    --proses-bg: #E1EBFA;
+    --proses-text: #3266E3;
+    
+    --tunggu-bg: #FEF3DD;
+    --tunggu-text: #F29D25;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    display: flex;
+    justify-content: center;
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+/* Container untuk layar lebar lanskap (TV/Monitor) */
+.tv-container {
+    width: 100%;
+    max-width: 1440px; /* Ukuran standar layar lebar */
+    background-color: var(--bg-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 24px 40px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    background-color: var(--brand-green);
+    color: white;
+    font-weight: 700;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--brand-green);
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.badge-container {
+    text-align: right;
+}
+
+.badge-realtime {
+    background-color: var(--siap-bg);
+    color: var(--brand-green);
+    padding: 8px 24px;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.content {
+    padding: 24px 40px;
+    flex: 1;
+}
+
+/* Info Bar */
+.info-bar {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px 24px;
+    margin-bottom: 24px;
+}
+
+.info-bar h2 {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.info-bar p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* Summary Cards (3 Kolom Flex/Grid) */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.summary-box {
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bg-siap { background-color: var(--siap-bg); }
+.bg-proses { background-color: var(--proses-bg); }
+.bg-tunggu { background-color: var(--tunggu-bg); }
+
+.text-siap { color: var(--siap-text); }
+.text-proses { color: var(--proses-text); }
+.text-tunggu { color: var(--tunggu-text); }
+
+.summary-text h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.summary-text p {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.summary-count {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+/* Main Board Layout */
+/* Membagi layar menjadi 40% (kiri) dan 60% (kanan) */
+.board-grid {
+    display: grid;
+    grid-template-columns: 2fr 3fr; 
+    gap: 24px;
+}
+
+.status-card {
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    background-color: #FFFFFF;
+}
+
+.card-full {
+    height: 100%;
+}
+
+.board-column-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+.text-black { color: var(--text-dark); }
+
+/* Grid untuk Susunan Angka */
+.pill-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Kolom untuk Siap Diambil */
+    gap: 20px;
+}
+
+.pill-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Kolom untuk Proses & Menunggu */
+    gap: 16px;
+}
+
+.number-pill {
+    padding: 18px 0;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+.bottom-footer {
+    background-color: #F1F5F9;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    margin: 20px 40px 40px 40px;
+    border-radius: 12px;
+}
+
+.bottom-footer p {
+    font-size: 15px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* Responsivitas (Meskipun ini desain lanskap, kita cegah pecah di layar kecil) */
+@media (max-width: 1024px) {
+    .board-grid {
+        grid-template-columns: 1fr;
+    }
+    .pill-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Kasir - Desktop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="desktop-layout">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <div class="logo-icon">A</div>
+                <h1 class="logo-text">KantinKU</h1>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" class="nav-link active">Dashboard</a>
+                <a href="#" class="nav-link">Transaksi</a>
+                <a href="#" class="nav-link">Antrian</a>
+                <a href="#" class="nav-link">Operasional</a>
+                <a href="#" class="nav-link">Akun</a>
+            </nav>
+        </aside>
+
+        <div class="main-wrapper">
+            
+            <header class="top-header">
+                <h2 class="page-title">Dashboard Kasir</h2>
+                
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="Cari menu, transaksi, antrian...">
+                </div>
+                
+                <div class="user-profile">
+                    Kasir
+                </div>
+            </header>
+
+            <main class="dashboard-content">
+                
+                <section class="hero-banner">
+                    <div class="hero-text">
+                        <h3>Ringkasan Hari Ini</h3>
+                        <p>Pantau transaksi, antrian, dan stok menu secara cepat.</p>
+                    </div>
+                    <button class="btn-primary" id="btn-transaksi">
+                        + Transaksi Baru
+                    </button>
+                </section>
+
+                <section class="metrics-grid">
+                    <div class="metric-card card-green">
+                        <i class="fa-solid fa-receipt metric-icon"></i>
+                        <p class="metric-label">Omzet Hari Ini</p>
+                        <h4 class="metric-value">Rp3.450.000</h4>
+                        <p class="metric-trend"><i class="fa-solid fa-caret-up"></i> 18% dari kemarin</p>
+                    </div>
+                    <div class="metric-card card-yellow">
+                        <i class="fa-solid fa-money-bill-wave metric-icon"></i>
+                        <p class="metric-label">Transaksi</p>
+                        <h4 class="metric-value">128</h4>
+                        <p class="metric-trend"><i class="fa-solid fa-caret-up"></i> 12% dari kemarin</p>
+                    </div>
+                    <div class="metric-card card-blue">
+                        <i class="fa-solid fa-bell-concierge metric-icon"></i>
+                        <p class="metric-label">Pesanan Aktif</p>
+                        <h4 class="metric-value">8</h4>
+                        <p class="metric-sub">Pesanan</p>
+                    </div>
+                    <div class="metric-card card-red">
+                        <i class="fa-solid fa-triangle-exclamation metric-icon"></i>
+                        <p class="metric-label">Menu Hampir Habis</p>
+                        <h4 class="metric-value">5</h4>
+                        <p class="metric-sub">Item</p>
+                    </div>
+                </section>
+
+                <section class="content-columns">
+                    
+                    <div class="content-box">
+                        <div class="box-header">
+                            <h3 class="box-title">Pesanan Aktif</h3>
+                            <a href="#" class="link-all">Lihat Semua</a>
+                        </div>
+                        <div class="list-container" id="orders-container">
+                            </div>
+                    </div>
+
+                    <div class="content-box">
+                        <div class="box-header">
+                            <h3 class="box-title">Notifikasi</h3>
+                        </div>
+                        <div class="list-container" id="notif-container">
+                            </div>
+                    </div>
+
+                </section>
+
+                <section class="content-box chart-section">
+                    <h3 class="box-title">Grafik Ringkasan Penjualan</h3>
+                    <div class="chart-container">
+                        <div class="bar-group"><div class="bar" style="height: 30%;"></div><span class="bar-label">07.00</span></div>
+                        <div class="bar-group"><div class="bar" style="height: 45%;"></div><span class="bar-label">09.00</span></div>
+                        <div class="bar-group"><div class="bar" style="height: 65%;"></div><span class="bar-label">11.00</span></div>
+                        <div class="bar-group"><div class="bar" style="height: 80%;"></div><span class="bar-label">13.00</span></div>
+                        <div class="bar-group"><div class="bar" style="height: 90%;"></div><span class="bar-label">15.00</span></div>
+                        <div class="bar-group"><div class="bar" style="height: 40%;"></div><span class="bar-label">17.00</span></div>
+                        <div class="bar-group"><div class="bar" style="height: 55%;"></div><span class="bar-label">19.00</span></div>
+                        <div class="bar-group"><div class="bar" style="height: 70%;"></div><span class="bar-label">21.00</span></div>
+                        <div class="bar-group"><div class="bar" style="height: 85%;"></div><span class="bar-label">23.00</span></div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KantinKu - Admin Dashboard</title>
+    <style>
+        /* =========================================
+           RESET & BASIC SETUP
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #d8dde3; /* Warna abu-abu background desktop */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Mencegah body ikut ter-scroll di desktop */
+        }
+
+        /* =========================================
+           MOBILE CONTAINER (KUNCI PERBAIKANNYA DI SINI)
+           ========================================= */
+        .mobile-container {
+            width: 100%;
+            max-width: 414px; /* Ukuran standar mobile */
+            height: 100vh; /* Memenuhi tinggi layar */
+            background-color: #ffffff;
+            overflow-y: auto; /* INI KUNCINYA: Mengaktifkan scroll vertikal */
+            overflow-x: hidden;
+            position: relative;
+            padding: 24px;
+            padding-bottom: 40px; /* Ruang bernapas di bagian paling bawah */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Menyembunyikan scrollbar bawaan browser agar terlihat seperti aplikasi native */
+        .mobile-container::-webkit-scrollbar {
+            display: none;
+        }
+        .mobile-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* =========================================
+           HEADER
+           ========================================= */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            color: #115e59;
+            font-size: 18px;
+        }
+
+        .logo-icon {
+            background-color: #10b981;
+            color: white;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            background-color: #d1fae5;
+            color: #047857;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        /* =========================================
+           GREETING SECTION
+           ========================================= */
+        .greeting-section {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .greeting-text {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .greeting-name {
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        .greeting-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1f2937;
+            line-height: 1.4;
+            max-width: 80%;
+        }
+
+        .btn-hari-ini {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 6px 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            background: white;
+            font-size: 12px;
+            font-weight: 600;
+            color: #374151;
+            cursor: pointer;
+        }
+
+        /* =========================================
+           STATS GRID
+           ========================================= */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            border: 1px solid #f3f4f6;
+            border-radius: 16px;
+            padding: 16px;
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .stat-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        /* Variasi Warna Card */
+        .card-green .stat-icon { background: #d1fae5; color: #10b981; }
+        .card-blue .stat-icon { background: #dbeafe; color: #3b82f6; }
+        .card-teal .stat-icon { background: #ccfbf1; color: #14b8a6; }
+        .card-orange .stat-icon { background: #ffedd5; color: #f97316; }
+
+        .stat-label { font-size: 11px; color: #6b7280; margin-bottom: 4px; }
+        .stat-value { font-size: 16px; font-weight: 700; color: #1f2937; margin-bottom: 4px; }
+        .stat-desc { font-size: 10px; font-weight: 500; }
+
+        .text-green { color: #10b981; }
+        .text-blue { color: #3b82f6; }
+        .text-teal { color: #14b8a6; }
+        .text-orange { color: #f97316; }
+
+        /* =========================================
+           CHART SECTION
+           ========================================= */
+        .chart-section {
+            border: 1px solid #f3f4f6;
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .chart-title { font-size: 14px; font-weight: 600; color: #1f2937; }
+        .chart-value { font-size: 18px; font-weight: 700; color: #1f2937; margin-top: 4px; }
+        .chart-trend { font-size: 11px; color: #10b981; font-weight: 600; }
+        .chart-trend span { color: #9ca3af; font-weight: normal; }
+
+        .chart-badge {
+            background: #d1fae5;
+            color: #047857;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .chart-placeholder {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(to bottom, #f0fdf4 0%, white 100%);
+            border-bottom: 1px solid #e5e7eb;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 10px;
+        }
+
+        /* Mockup garis chart sederhana */
+        .chart-line {
+            width: 100%;
+            height: 60px;
+            border-top: 2px solid #10b981;
+            position: relative;
+        }
+
+        .chart-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 10px;
+            color: #9ca3af;
+        }
+
+        .label-active { color: #1f2937; font-weight: 600; }
+
+        /* =========================================
+           AKTIVITAS TERBARU (SEKARANG BISA DI-SCROLL)
+           ========================================= */
+        .activity-section {
+            margin-top: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .link-all {
+            font-size: 12px;
+            color: #10b981;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            background: #f3f4f6;
+            border-radius: 50%;
+        }
+
+        .activity-details {
+            flex: 1;
+        }
+
+        .activity-title { font-size: 14px; font-weight: 600; color: #1f2937; }
+        .activity-time { font-size: 11px; color: #6b7280; }
+        .activity-amount { font-size: 14px; font-weight: 700; color: #10b981; }
+
+    </style>
+</head>
+<body>
+
+    <div class="mobile-container">
+        
+        <div class="header">
+            <div class="logo-area">
+                <span>☰</span>
+                <div class="logo-icon">A</div>
+                KantinKu
+            </div>
+            <div class="header-actions">
+                <span style="color: #f97316;">🔔</span>
+                <div class="avatar">AD</div>
+            </div>
+        </div>
+
+        <div class="greeting-section">
+            <div class="greeting-text">Selamat pagi, <span class="greeting-name">Admin</span></div>
+            <div class="greeting-title">Pantau operasional kantin Anda hari ini 👋</div>
+            <button class="btn-hari-ini">Hari ini</button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card card-green">
+                <div class="stat-icon">💲</div>
+                <div class="stat-label">Pendapatan Hari Ini</div>
+                <div class="stat-value">Rp3.450.000</div>
+                <div class="stat-desc text-green">↑ 12,5% dari kemarin</div>
+            </div>
+            <div class="stat-card card-blue">
+                <div class="stat-icon">🛎️</div>
+                <div class="stat-label">Pesanan Aktif</div>
+                <div class="stat-value">128</div>
+                <div class="stat-desc text-blue">8 pesanan diproses</div>
+            </div>
+            <div class="stat-card card-teal">
+                <div class="stat-icon">👥</div>
+                <div class="stat-label">Total Pengguna</div>
+                <div class="stat-value">256</div>
+                <div class="stat-desc text-teal">24 baru bulan ini</div>
+            </div>
+            <div class="stat-card card-orange">
+                <div class="stat-icon">🕒</div>
+                <div class="stat-label">Menunggu Persetujuan</div>
+                <div class="stat-value">14</div>
+                <div class="stat-desc text-orange">Menu & Akun</div>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <div class="chart-header">
+                <div>
+                    <div class="chart-title">Penjualan 7 Hari Terakhir</div>
+                    <div class="chart-value">Rp18.750.000 <span class="chart-trend">↑ 15,8% <span>vs 7 hari lalu</span></span></div>
+                </div>
+                <div class="chart-badge">7 Hari</div>
+            </div>
+            <div class="chart-placeholder">
+                <div class="chart-line"></div>
+            </div>
+            <div class="chart-labels">
+                <span>Rab</span>
+                <span>Kam</span>
+                <span>Jum</span>
+                <span>Sab</span>
+                <span>Min</span>
+                <span>Sen</span>
+                <span class="label-active">Hari ini</span>
+            </div>
+        </div>
+
+        <div class="activity-section">
+            <div class="section-header">
+                <div class="section-title">Aktivitas Terbaru</div>
+                <a href="#" class="link-all">Lihat semua</a>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-icon"></div>
+                <div class="activity-details">
+                    <div class="activity-title">Pesanan #1029 Selesai</div>
+                    <div class="activity-time">2 menit yang lalu</div>
+                </div>
+                <div class="activity-amount">+ Rp 45.000</div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-icon"></div>
+                <div class="activity-details">
+                    <div class="activity-title">Pesanan #1028 Selesai</div>
+                    <div class="activity-time">15 menit yang lalu</div>
+                </div>
+                <div class="activity-amount">+ Rp 20.000</div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-icon"></div>
+                <div class="activity-details">
+                    <div class="activity-title">User Baru Mendaftar</div>
+                    <div class="activity-time">1 jam yang lalu</div>
+                </div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-icon"></div>
+                <div class="activity-details">
+                    <div class="activity-title">Pesanan #1027 Selesai</div>
+                    <div class="activity-time">1 jam 15 menit yang lalu</div>
+                </div>
+                <div class="activity-amount">+ Rp 125.000</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

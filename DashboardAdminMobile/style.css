@@ -1,0 +1,374 @@
+/* === CSS Variables === */
+:root {
+    --font-family: 'Inter', sans-serif;
+    --bg-body: #F9FAFB;
+    --bg-surface: #FFFFFF;
+    
+    --text-dark: #1F2937;
+    --text-muted: #6B7280;
+    
+    --primary-green: #27AE60;
+    --light-green: #EAFaf1;
+    --accent-green: #1E8449;
+    
+    --primary-blue: #2980B9;
+    --light-blue: #EBF5FB;
+    
+    --primary-orange: #E67E22;
+    --light-orange: #FEF5E7;
+    
+    --border-color: #E5E7EB;
+    --radius-md: 16px;
+    --radius-lg: 20px;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* === Reset & Base Styles === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #D1D5DB; /* Latar belakang gelap agar layar HP menonjol */
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    /* Pusatkan bingkai mobile di tengah browser */
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* === BINGKAI MOBILE (Kunci utamanya di sini) === */
+.mobile-wrapper {
+    width: 100%;
+    max-width: 414px; /* Lebar maksimal seukuran layar HP besar (misal iPhone Max) */
+    min-height: 100vh;
+    background-color: var(--bg-body);
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15); /* Efek bayangan seperti HP asli */
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 16px;
+    padding-bottom: 90px; /* Ruang untuk bottom nav agar tidak tertutup */
+}
+
+/* === Header === */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 24px;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    display: flex;
+    cursor: pointer;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    background-color: var(--primary-green);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.brand-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.notification {
+    position: relative;
+    color: var(--primary-orange);
+    cursor: pointer;
+}
+
+.notif-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #EF4444;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid var(--bg-body);
+}
+
+.profile-avatar {
+    background-color: var(--light-green);
+    color: var(--primary-green);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* === Greeting Section === */
+.greeting {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.greeting-text h2 {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.greeting-text h2 span {
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.greeting-text h1 {
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.filter-btn {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+}
+
+/* === Stats Grid === */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background-color: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-card.green { background-color: #F6FCF8; border-color: #E2F3E8; }
+.stat-card.blue { background-color: #F4F9FD; border-color: #E0EEF9; }
+.stat-card.teal { background-color: #F2FBF9; border-color: #DEF5F0; }
+.stat-card.orange { background-color: #FDF8F3; border-color: #FAEEDB; }
+
+.stat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon span { font-size: 20px; }
+
+.stat-card.green .stat-icon { background-color: var(--light-green); color: var(--primary-green); }
+.stat-card.blue .stat-icon { background-color: var(--light-blue); color: var(--primary-blue); }
+.stat-card.teal .stat-icon { background-color: #E0F2F1; color: #00897B; }
+.stat-card.orange .stat-icon { background-color: var(--light-orange); color: var(--primary-orange); }
+
+.stat-info .title { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+.stat-info .value { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.stat-info .subtext { font-size: 10px; font-weight: 500; }
+
+.stat-card.green .subtext { color: var(--accent-green); }
+.stat-card.blue .subtext { color: var(--primary-blue); }
+.stat-card.teal .subtext { color: #00796B; }
+.stat-card.orange .subtext { color: var(--primary-orange); }
+
+/* === Chart Section === */
+.chart-section {
+    background-color: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.chart-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.chart-amount { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.chart-trend { font-size: 11px; font-weight: 600; color: var(--accent-green); }
+.chart-trend span { font-weight: 400; color: var(--text-muted); font-size: 10px; }
+        
+.chart-filter {
+    background-color: var(--light-green);
+    color: var(--accent-green);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.chart-container {
+    width: 100%;
+    height: 120px;
+}
+
+.chart-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.grid-line {
+    stroke: var(--border-color);
+    stroke-dasharray: 4;
+}
+
+.point {
+    r: 4;
+    fill: white;
+    stroke: var(--primary-green);
+    stroke-width: 2;
+}
+
+.chart-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 10px;
+    color: var(--text-muted);
+    border-top: 1px dashed var(--border-color);
+    padding-top: 8px;
+}
+
+.label-today {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* === Recent Activity Section === */
+.recent-activity {
+    background-color: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.section-header h3 { font-size: 15px; font-weight: 700; }
+.section-header a { font-size: 12px; font-weight: 600; color: var(--primary-green); text-decoration: none; }
+
+.activity-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.act-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.act-icon span { font-size: 18px; }
+
+.act-icon.green { background-color: var(--light-green); color: var(--primary-green); }
+.act-icon.orange { background-color: var(--light-orange); color: var(--primary-orange); }
+
+.act-details { flex-grow: 1; overflow: hidden; }
+.act-title { font-size: 12px; font-weight: 600; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.act-desc { font-size: 11px; color: var(--text-muted); }
+.act-time { font-size: 10px; color: var(--text-muted); flex-shrink: 0; margin-top: 2px;}
+
+/* === Bottom Navigation === */
+.bottom-nav {
+    position: absolute; /* Terikat pada .mobile-wrapper */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0 20px 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.nav-item.active {
+    color: var(--primary-green);
+}

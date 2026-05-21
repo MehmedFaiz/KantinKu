@@ -1,0 +1,143 @@
+:root {
+    --brand-green: #3B8256;
+    --brand-green-hover: #2E6B45;
+    --bg-main: #FFFFFF;
+    --bg-outside: #F3F4F6;
+    --text-dark: #1A1A1A;
+    --text-muted: #6B7280;
+    --border-color: #D1D5DB;
+    --error-red: #DC2626;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-outside);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Mobile Emulator Container */
+.mobile-emulator {
+    width: 100%;
+    max-width: 414px;
+    height: 100vh;
+    max-height: 896px;
+    background-color: var(--bg-main);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Header */
+.app-header {
+    padding: 16px 20px;
+    background: var(--bg-main);
+    z-index: 10;
+}
+.logo { display: flex; align-items: center; gap: 8px; }
+.logo-icon { background: var(--brand-green); color: white; width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; }
+.logo-text { font-size: 20px; font-weight: 700; color: var(--brand-green); }
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-section { width: 100%; height: 220px; background-color: #E5E7EB; }
+.hero-image { width: 100%; height: 100%; object-fit: cover; }
+
+/* Login Form Area (Overlapping Image) */
+.login-section {
+    padding: 0 20px 20px 20px;
+    margin-top: -30px; /* Tarik form ke atas agar menimpa gambar sedikit */
+    position: relative;
+    z-index: 5;
+}
+
+.card {
+    background-color: var(--bg-main);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    padding: 30px 24px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.form-title { text-align: center; font-size: 28px; font-weight: 700; margin-bottom: 24px; color: var(--text-dark); }
+
+/* Form Elements */
+.input-group { margin-bottom: 16px; display: flex; flex-direction: column; }
+.input-group label { font-size: 14px; font-weight: 700; margin-bottom: 8px; color: var(--text-dark); }
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.icon-left { position: absolute; left: 14px; color: var(--text-muted); font-size: 18px; }
+
+.input-wrapper input, .input-wrapper select {
+    width: 100%;
+    padding: 14px 14px 14px 44px; /* Space for left icon */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+    background: var(--bg-main);
+}
+
+.input-wrapper select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%236B7280%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px top 50%;
+    background-size: 12px auto;
+}
+
+.input-wrapper input:focus, .input-wrapper select:focus { border-color: var(--brand-green); }
+.input-wrapper input.is-invalid, .input-wrapper select.is-invalid { border-color: var(--error-red); }
+
+/* Toggle Password Button */
+.btn-toggle-pass {
+    position: absolute; right: 14px; background: none; border: none;
+    color: var(--text-muted); font-size: 18px; cursor: pointer; padding: 4px;
+}
+
+.error-msg { color: var(--error-red); font-size: 12px; margin-top: 4px; min-height: 15px; }
+
+/* Actions & Links */
+.form-actions { display: flex; justify-content: flex-end; margin-bottom: 20px; }
+.forgot-link { color: var(--brand-green); font-size: 14px; font-weight: 600; text-decoration: none; }
+
+.btn-primary {
+    width: 100%; background-color: var(--brand-green); color: white;
+    border: none; padding: 14px; border-radius: 8px; font-size: 16px;
+    font-weight: 600; cursor: pointer; transition: background-color 0.2s;
+    margin-bottom: 20px;
+}
+.btn-primary:hover { background-color: var(--brand-green-hover); }
+
+.register-link { text-align: center; font-size: 14px; color: var(--text-dark); }
+.register-link a { color: var(--brand-green); font-weight: 600; text-decoration: none; }
+
+/* Footer */
+.app-footer { padding: 20px; text-align: center; font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+/* === Media Query (Progressive Enhancement for Desktop viewing) === */
+@media (min-width: 600px) {
+    .mobile-emulator {
+        border-radius: 24px; /* Membulat di desktop agar terlihat seperti HP */
+        height: 90vh; /* Agar tidak mentok atas-bawah layar monitor */
+    }
+}

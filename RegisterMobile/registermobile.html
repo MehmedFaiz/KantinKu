@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KantinKu - Register</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <button class="menu-btn" aria-label="Menu" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="logo">
+                <div class="logo-icon">A</div>
+                <h1 class="logo-text">KantinKu</h1>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <img src="kantin.png" alt="Suasana Kantin" class="hero-image">
+        </section>
+
+        <section class="form-section">
+            <div class="card">
+                <form id="registerForm" novalidate>
+                    <div class="input-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-circle-user icon"></i>
+                            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <span class="error-message" id="error-nama"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope icon"></i>
+                            <input type="email" id="email" name="email" placeholder="nama@gmail.com" required>
+                        </div>
+                        <span class="error-message" id="error-email"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="phone">No. Handphone</label>
+                        <div class="input-wrapper">
+                            <!-- Tidak ada ikon pada desain -->
+                            <input type="tel" id="phone" name="phone" placeholder="08xxxxxxxx" class="no-icon" required>
+                        </div>
+                        <span class="error-message" id="error-phone"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock icon"></i>
+                            <input type="password" id="password" name="password" placeholder="Minimal 6 karakter" required>
+                        </div>
+                        <span class="error-message" id="error-password"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="confirm-password">Konfirmasi Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock icon"></i>
+                            <input type="password" id="confirm-password" name="confirm-password" placeholder="Ulangi password" required>
+                        </div>
+                        <span class="error-message" id="error-confirm-password"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="role">Role</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope icon"></i>
+                            <select id="role" name="role" required>
+                                <option value="" disabled selected>Pilih role</option>
+                                <option value="pelanggan">Pelanggan</option>
+                                <option value="penjual">Penjual</option>
+                            </select>
+                        </div>
+                        <span class="error-message" id="error-role"></span>
+                    </div>
+
+                    <div class="terms-group">
+                        <p>Saya setuju dengan <a href="#" class="text-green">Syarat & Ketentuan</a> dan <a href="#" class="text-green">Kebijakan Privasi</a></p>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="submitBtn">Daftar</button>
+
+                    <div class="login-link">
+                        <p>Sudah punya akun? <a href="#" class="text-green fw-bold">Masuk</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 KantinKu. Semua hak dilindungi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Kasir - Tablet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="tablet-container">
+        <header class="app-header">
+            <div class="header-left">
+                <button class="icon-btn"><i class="fa-solid fa-bars"></i></button>
+                <div class="logo">
+                    <span class="logo-icon">A</span>
+                    <span class="logo-text">KantinKU</span>
+                </div>
+            </div>
+            <h1 class="header-title">Dashboard Kasir</h1>
+            <div class="header-right">
+                <div class="user-profile">
+                    Siti Aisyah &bull; Kasir
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="hero-banner">
+                <div class="hero-text">
+                    <h2>Ringkasan Hari Ini</h2>
+                    <p>Pantau transaksi, antrian, dan stok menu secara cepat.</p>
+                </div>
+                <button class="btn-primary" id="btn-transaksi">
+                    + Transaksi Baru
+                </button>
+            </section>
+
+            <section class="metrics-grid">
+                <div class="metric-card card-green">
+                    <i class="fa-solid fa-receipt metric-icon"></i>
+                    <p class="metric-label">Omzet Hari Ini</p>
+                    <h3 class="metric-value">Rp3.450.000</h3>
+                    <p class="metric-trend"><i class="fa-solid fa-caret-up"></i> 18% dari kemarin</p>
+                </div>
+                <div class="metric-card card-yellow">
+                    <i class="fa-solid fa-money-bill-wave metric-icon"></i>
+                    <p class="metric-label">Transaksi</p>
+                    <h3 class="metric-value">128</h3>
+                    <p class="metric-trend"><i class="fa-solid fa-caret-up"></i> 12% dari kemarin</p>
+                </div>
+                <div class="metric-card card-blue">
+                    <i class="fa-solid fa-bell-concierge metric-icon"></i>
+                    <p class="metric-label">Pesanan Aktif</p>
+                    <h3 class="metric-value">8</h3>
+                    <p class="metric-sub">Pesanan</p>
+                </div>
+                <div class="metric-card card-red">
+                    <i class="fa-solid fa-triangle-exclamation metric-icon"></i>
+                    <p class="metric-label">Menu Hampir Habis</p>
+                    <h3 class="metric-value">5</h3>
+                    <p class="metric-sub">Item</p>
+                </div>
+            </section>
+
+            <section class="dashboard-columns">
+                <div class="content-box">
+                    <div class="box-header">
+                        <h3 class="box-title">Pesanan Aktif</h3>
+                        <a href="#" class="link-all">Lihat Semua</a>
+                    </div>
+                    <div class="list-container" id="orders-container">
+                        </div>
+                </div>
+
+                <div class="content-box">
+                    <div class="box-header">
+                        <h3 class="box-title">Notifikasi</h3>
+                    </div>
+                    <div class="list-container" id="notif-container">
+                        </div>
+                </div>
+            </section>
+
+            <section class="chart-section content-box">
+                <h3 class="box-title">Ringkasan Penjualan Hari Ini</h3>
+                <div class="chart-container">
+                    <div class="bar-group">
+                        <div class="bar" style="height: 40%;"></div>
+                        <span class="bar-label">07.00</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 55%;"></div>
+                        <span class="bar-label">09.00</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 70%;"></div>
+                        <span class="bar-label">11.00</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 85%;"></div>
+                        <span class="bar-label">13.00</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 45%;"></div>
+                        <span class="bar-label">15.00</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 60%;"></div>
+                        <span class="bar-label">17.00</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 75%;"></div>
+                        <span class="bar-label">18.00</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
