@@ -55,9 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
             btnLogin.disabled = true;
 
             // Simulasi proses autentikasi server (1.5 detik)
+           // Simulasi proses autentikasi server (1.5 detik)
             setTimeout(() => {
-                alert(`Login berhasil untuk akun:\n${email}`);
-                
+                window.location.href = "../DashboardAdminDesktop/";
+            }, 1500);
                 // Reset State
                 btnLogin.textContent = originalText;
                 btnLogin.style.backgroundColor = ''; // Kembali ke CSS asli
